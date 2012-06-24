@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>net.wkh.karaf.contactlist.project</artifactId>
+        <groupId>net.wkh.karaf</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>net.wkh.karaf</groupId>
+    <artifactId>net.wkh.karaf.contactlist.persistence</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+
+    <name>net.wkh.karaf.contactlist.persistence Blueprint Bundle</name>
+    <description>net.wkh.karaf.contactlist.persistence OSGi blueprint bundle project.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.wkh.karaf</groupId>
+            <artifactId>net.wkh.karaf.contactlist.model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Export-Package>net.wkh.karaf.contactlist.persistence*;version=${project.version}</Export-Package>
+                        <Import-Package>*</Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+
+    <feature name="contactlist" version="${pom.version}">
+        <feature>http</feature>
+        <feature>http-whiteboard</feature>
+        <bundle>mvn:net.wkh.karaf/net.wkh.karaf.contactlist.model/${pom.version}</bundle>
+        <bundle>mvn:net.wkh.karaf/net.wkh.karaf.contactlist.persistence/${pom.version}</bundle>
+        <bundle>mvn:net.wkh.karaf/net.wkh.karaf.contactlist.ui/${pom.version}</bundle>
+    </feature>
+
+</features>

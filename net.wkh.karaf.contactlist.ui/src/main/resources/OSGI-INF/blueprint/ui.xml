@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" default-activation="lazy">
+    <reference id="contactService" availability="mandatory" interface="net.wkh.karaf.contactlist.model.ContactService"/>
+
+    <bean id="contactServlet" class="net.wkh.karaf.contactlist.ui.ContactListServlet">
+        <property name="contactService" ref="contactService"/>
+    </bean>
+
+    <service ref="contactServlet" interface="javax.servlet.http.HttpServlet">
+        <service-properties>
+            <entry key="alias" value="/contacts"/>
+        </service-properties>
+    </service>
+
+</blueprint>
